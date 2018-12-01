@@ -49,55 +49,14 @@ describe("generateExpression", () => {
       }
     }
   });
-  // it("should generate some valid expression of the specified length for any number from -1000 to -1", () => {
-  //   for (let k = 2; k < 4; k++) {
-  //     for (let i = -1000; i < 0; i += randomNumberInRange(0, 1) + 100) {
-  //       for (let j = 0; j < 10; j++) {
-  //         const expressionAndNoise: {
-  //           numbers: number[];
-  //           operators: Operator[];
-  //         } = mathUtils.generateExpression(i, k, 3);
-  //         const allNumberExpressions: number[][] = Array.from(
-  //           Generatorics.clone.permutation(expressionAndNoise.numbers, k)
-  //         );
-  //         const allOperatorExpressions: Operator[][] = Array.from(
-  //           Generatorics.clone.permutation(expressionAndNoise.operators, k - 1)
-  //         );
-  //         expect(expressionAndNoise.numbers.length).toEqual(k + 6);
-  //         expect(expressionAndNoise.operators.length).toEqual(k - 1 + 3);
-  //         expect(
-  //           allNumberExpressions.some((numbers: number[]) =>
-  //             allOperatorExpressions.some((operators: Operator[]) => {
-  //               const expressionString: string = numbers.reduce(
-  //                 (reduction: string, n: number, index: number) => {
-  //                   let expression: string = `${reduction}${n}`;
-  //                   if (index !== numbers.length - 1) {
-  //                     expression = `${expression}${operatorMapper(
-  //                       operators[index]
-  //                     )}`;
-  //                   }
-  //                   return expression;
-  //                 },
-  //                 ""
-  //               );
-  //               return math.eval(expressionString) === i;
-  //             })
-  //           )
-  //         ).toEqual(true);
-  //       }
-  //     }
-  //   }
-  // });
   it("should never choose multiplication for prime numbers (or 1) in a two-number expression", () => {
-    // const primes: number[] = [1, 2, 13, 17, 19, 103, 199, 131];
-    // primes.forEach((prime: number) => {
-    //   for (let i = 0; i < 5; i++) {
-    //     const expression: Expression = generateExpression(prime, 2);
-    //     expect(expression.operators.length).toEqual(1);
-    //     expect(expression.operators[0]).not.toEqual(
-    //       Operator.MULTIPLICATION
-    //     );
-    //   }
-    // });
+    const primes: number[] = [1, 2, 13, 17, 19, 103, 199, 131];
+    primes.forEach((prime: number) => {
+      for (let i = 0; i < 5; i++) {
+        const expression: Expression = generateExpression(prime, 2);
+        expect(expression.length).toEqual(3);
+        expect(expression[1]).not.toEqual(Operator.MULTIPLICATION);
+      }
+    });
   });
 });
