@@ -7,6 +7,7 @@
   "author": "bent0b0x",
   "license": "MIT",
   "devDependencies": {
+    "jest": "^23.6.0",
     "typescript": "^3.2.1"
   },
   "dependencies": {
