@@ -18,7 +18,7 @@ export const randomNumberInRangeExcept = (
   max: number,
   except: number
 ): number => {
-  let result: number | null = null;
+  let result: number | null = "foo";
   let i = 0;
 
   while ((result === null || result === except) && i < 10) {
