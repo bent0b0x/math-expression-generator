@@ -7,7 +7,9 @@
   "author": "bent0b0x",
   "license": "MIT",
   "scripts": {
-    "dev": "yarn webpack --watch --mode=development"
+    "dev": "yarn webpack --watch --mode=development",
+    "test": "jest",
+    "test:dev": "jest --watchAll"
   },
   "husky": {
     "hooks": {
@@ -25,16 +27,22 @@
     ]
   },
   "devDependencies": {
+    "@types/jest": "^23.3.10",
     "@types/lodash": "^4.14.118",
+    "@types/mathjs": "^4.4.3",
+    "@types/shuffle-array": "^0.0.28",
     "@webpack-cli/init": "^0.1.2",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.0.4",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "babel-preset-env": "^1.7.0",
+    "generatorics": "^1.1.0",
     "husky": "^1.2.0",
     "jest": "^23.6.0",
     "lint-staged": "^8.1.0",
+    "mathjs": "^5.3.0",
     "prettier": "^1.15.3",
+    "ts-jest": "^23.10.5",
     "ts-loader": "^5.3.1",
     "tslint": "^5.11.0",
     "tslint-config-prettier": "^1.17.0",
@@ -43,7 +51,6 @@
     "webpack-cli": "^3.1.2"
   },
   "dependencies": {
-    "@types/shuffle-array": "^0.0.28",
     "lodash.shuffle": "^4.2.0",
     "quick-is-prime": "^1.0.7",
     "shuffle-array": "^1.0.1"

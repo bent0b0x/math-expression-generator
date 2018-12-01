@@ -1,5 +1,5 @@
-import isPrime from "quick-is-prime";
-import shuffle from "shuffle-array";
+import * as isPrime from "quick-is-prime";
+import * as shuffle from "shuffle-array";
 
 import Operator from "./operators/types/Operator";
 
