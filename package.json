@@ -1,0 +1,16 @@
+{
+  "name": "math-expression-generator",
+  "version": "0.0.0",
+  "description": "JavaScript library for generating mathematical expressions that evaluate to a particular number",
+  "main": "index.js",
+  "repository": "https://github.com/bent0b0x/math-expression-generator",
+  "author": "bent0b0x",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^3.2.1"
+  },
+  "dependencies": {
+    "lodash.shuffle": "^4.2.0",
+    "quick-is-prime": "^1.0.7"
+  }
+}
