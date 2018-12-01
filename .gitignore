@@ -4,6 +4,8 @@
 
 .eslintcache
 
+dist/
+
 # node.js
 #
 node_modules/
