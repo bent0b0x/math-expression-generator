@@ -1,9 +1,9 @@
-import shuffle from "shuffle-array";
 import isPrime from "quick-is-prime";
+import shuffle from "shuffle-array";
 
 import Operator from "./operators/types/Operator";
 
-interface OperatorTruthTable {
+interface IOperatorTruthTable {
   [Operator.DIVISION]: boolean;
   [Operator.MULTIPLICATION]: boolean;
   [Operator.ADDITION]: boolean;
@@ -29,9 +29,9 @@ export const randomNumberInRangeExcept = (
   return result || max;
 };
 
-export const findAllPositiveDivisors = (n: number): Array<number> => {
-  let largeDivisors: Array<number> = [];
-  let smallDivisors: Array<number> = [];
+export const findAllPositiveDivisors = (n: number): number[] => {
+  const largeDivisors: number[] = [];
+  const smallDivisors: number[] = [];
 
   const sqrt: number = Math.sqrt(n);
 
@@ -57,29 +57,32 @@ export const randomDivisorPair = (n: number): [number, number] => {
   }
 
   if (n > 0) {
-    const divisors: Array<number> = findAllPositiveDivisors(n);
+    const divisorsForPositiveN: number[] = findAllPositiveDivisors(n);
 
-    if (!divisors.length) {
+    if (!divisorsForPositiveN.length) {
       return [0, 0];
     }
 
-    const randomDivisor: number =
-      divisors[Math.floor(Math.random() * divisors.length)];
+    const randomDivisorForPositiveN: number =
+      divisorsForPositiveN[
+        Math.floor(Math.random() * divisorsForPositiveN.length)
+      ];
 
-    return [randomDivisor, n / randomDivisor];
+    return [randomDivisorForPositiveN, n / randomDivisorForPositiveN];
   }
 
-  const divisors: Array<number> = findAllPositiveDivisors(-n);
+  const divisorsForNonPositiveN: number[] = findAllPositiveDivisors(-n);
 
-  if (!divisors.length) {
+  if (!divisorsForNonPositiveN.length) {
     return [0, 0];
   }
 
-  const randomDivisor: number =
-    divisors[Math.floor(Math.random() * divisors.length)] *
-    (randomNumberInRange(1, 2) === 1 ? 1 : -1);
+  const randomDivisorForNonPositiveN: number =
+    divisorsForNonPositiveN[
+      Math.floor(Math.random() * divisorsForNonPositiveN.length)
+    ] * (randomNumberInRange(1, 2) === 1 ? 1 : -1);
 
-  return [randomDivisor, n / randomDivisor];
+  return [randomDivisorForNonPositiveN, n / randomDivisorForNonPositiveN];
 };
 
 export const randomMultiplePair = (n: number): [number, number] => {
@@ -88,26 +91,30 @@ export const randomMultiplePair = (n: number): [number, number] => {
   }
 
   if (n > 0) {
-    const maxMultiple: number = Math.floor(Math.sqrt(n));
-    const randomMultiple: number = randomNumberInRange(2, maxMultiple);
+    const maxMultipleForPositiveN: number = Math.floor(Math.sqrt(n));
+    const randomMultipleForPositiveN: number = randomNumberInRange(
+      2,
+      maxMultipleForPositiveN
+    );
 
-    const secondMultiple: number = n * randomMultiple;
+    const secondMultipleForPositiveN: number = n * randomMultipleForPositiveN;
 
-    return randomMultiple / secondMultiple === n
-      ? [randomMultiple, secondMultiple]
-      : [secondMultiple, randomMultiple];
+    return randomMultipleForPositiveN / secondMultipleForPositiveN === n
+      ? [randomMultipleForPositiveN, secondMultipleForPositiveN]
+      : [secondMultipleForPositiveN, randomMultipleForPositiveN];
   }
 
-  const maxMultiple: number = Math.floor(Math.sqrt(-n));
-  const randomMultiple: number =
-    randomNumberInRange(2, maxMultiple) *
+  const maxMultipleForNonPositiveN: number = Math.floor(Math.sqrt(-n));
+  const randomMultipleForNonPositiveN: number =
+    randomNumberInRange(2, maxMultipleForNonPositiveN) *
     (randomNumberInRange(1, 2) === 1 ? -1 : 1);
 
-  const secondMultiple: number = n * randomMultiple;
+  const secondMultipleForNonPositiveN: number =
+    n * randomMultipleForNonPositiveN;
 
-  return randomMultiple / secondMultiple === n
-    ? [randomMultiple, secondMultiple]
-    : [secondMultiple, randomMultiple];
+  return randomMultipleForNonPositiveN / secondMultipleForNonPositiveN === n
+    ? [randomMultipleForNonPositiveN, secondMultipleForNonPositiveN]
+    : [secondMultipleForNonPositiveN, randomMultipleForNonPositiveN];
 };
 
 export const randomAdditivePair = (n: number): [number, number] => {
@@ -116,13 +123,16 @@ export const randomAdditivePair = (n: number): [number, number] => {
   }
 
   if (n > 0) {
-    const randomNumber: number = randomNumberInRange(1, n - 1);
-    return [randomNumber, n - randomNumber];
+    const randomNumberForPositiveN: number = randomNumberInRange(1, n - 1);
+    return [randomNumberForPositiveN, n - randomNumberForPositiveN];
   }
 
-  const randomNumber: number = randomNumberInRange(n + Math.floor(n / 2), -1);
+  const randomNumberForNonPoitiveN: number = randomNumberInRange(
+    n + Math.floor(n / 2),
+    -1
+  );
 
-  return [randomNumber, n - randomNumber];
+  return [randomNumberForNonPoitiveN, n - randomNumberForNonPoitiveN];
 };
 
 export const randomSubtractivePair = (n: number): [number, number] => {
@@ -131,31 +141,52 @@ export const randomSubtractivePair = (n: number): [number, number] => {
   }
 
   if (n > 0) {
-    const randomSubtractiveNumber: number = randomNumberInRange(
+    const randomSubtractiveNumberForPositiveN: number = randomNumberInRange(
       1,
       Math.floor(Math.sqrt(n))
     );
 
-    const secondSubtractiveNumber: number = randomSubtractiveNumber + n;
+    const secondSubtractiveNumberForPositiveN: number =
+      randomSubtractiveNumberForPositiveN + n;
 
-    return randomSubtractiveNumber - secondSubtractiveNumber === n
-      ? [randomSubtractiveNumber, secondSubtractiveNumber]
-      : [secondSubtractiveNumber, randomSubtractiveNumber];
+    return randomSubtractiveNumberForPositiveN -
+      secondSubtractiveNumberForPositiveN ===
+      n
+      ? [
+          randomSubtractiveNumberForPositiveN,
+          secondSubtractiveNumberForPositiveN
+        ]
+      : [
+          secondSubtractiveNumberForPositiveN,
+          randomSubtractiveNumberForPositiveN
+        ];
   }
 
-  const randomSubtractiveNumber: number = randomNumberInRange(n, -n);
+  const randomSubtractiveNumberForNonPositiveN: number = randomNumberInRange(
+    n,
+    -n
+  );
 
-  const secondSubtractiveNumber: number = randomSubtractiveNumber + n;
+  const secondSubtractiveNumberForNonPositiveN: number =
+    randomSubtractiveNumberForNonPositiveN + n;
 
-  return randomSubtractiveNumber - secondSubtractiveNumber === n
-    ? [randomSubtractiveNumber, secondSubtractiveNumber]
-    : [secondSubtractiveNumber, randomSubtractiveNumber];
+  return randomSubtractiveNumberForNonPositiveN -
+    secondSubtractiveNumberForNonPositiveN ===
+    n
+    ? [
+        randomSubtractiveNumberForNonPositiveN,
+        secondSubtractiveNumberForNonPositiveN
+      ]
+    : [
+        secondSubtractiveNumberForNonPositiveN,
+        randomSubtractiveNumberForNonPositiveN
+      ];
 };
 
 export const randomOperator = (
-  validOperators?: OperatorTruthTable
+  validOperators?: IOperatorTruthTable
 ): Operator => {
-  let operators: Array<Operator> = [];
+  let operators: Operator[] = [];
   if (validOperators) {
     Object.keys(validOperators).forEach(
       (operator: Operator): void => {
@@ -193,8 +224,8 @@ const randomPairForNumberAndOperator = (
     : randomMultiplePair(n);
 };
 
-const generateNoiseNumbers = (n: number, numPairs: number): Array<number> => {
-  let noise: Array<number> = [];
+const generateNoiseNumbers = (n: number, numPairs: number): number[] => {
+  const noise: number[] = [];
   for (let i = 0; i < numPairs * 2; i += 1) {
     const zeroOrOne: number = Math.floor(Math.random() * 2);
 
@@ -210,8 +241,8 @@ const generateNoiseNumbers = (n: number, numPairs: number): Array<number> => {
   return noise;
 };
 
-const generateNoiseOperators = (numOperators: number): Array<Operator> => {
-  let noise: Array<Operator> = [];
+const generateNoiseOperators = (numOperators: number): Operator[] => {
+  const noise: Operator[] = [];
   for (let i = 0; i < numOperators; i++) {
     noise.push(randomOperator());
   }
@@ -221,10 +252,10 @@ const generateNoiseOperators = (numOperators: number): Array<Operator> => {
 
 const generatePairExpression = (
   n: number,
-  validOperators: OperatorTruthTable
+  validOperators: IOperatorTruthTable
 ) => {
   const operators: ReadonlyArray<Operator> = [randomOperator(validOperators)];
-  const numbers: ReadonlyArray<number> = randomPairForNumberAndOperator(
+  const numbers: Readonlynumber[] = randomPairForNumberAndOperator(
     n,
     operators[0]
   );
@@ -240,7 +271,7 @@ const getValidOperators = (
   onLeft?: boolean,
   leftOperator?: Operator,
   rightOperator?: Operator
-): OperatorTruthTable => ({
+): IOperatorTruthTable => ({
   [Operator.DIVISION]:
     n !== 1 &&
     n !== -1 &&
@@ -334,8 +365,8 @@ export const generateExpressionAndNoise = (
 ) => {
   const expression = generateExpression(n, length);
 
-  const noiseNumbers: Array<number> = generateNoiseNumbers(n, noiseCount);
-  const noiseOperators: Array<Operator> = generateNoiseOperators(noiseCount);
+  const noiseNumbers: number[] = generateNoiseNumbers(n, noiseCount);
+  const noiseOperators: Operator[] = generateNoiseOperators(noiseCount);
 
   return {
     numbers: shuffle(noiseNumbers.concat(expression.numbers)),

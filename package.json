@@ -7,7 +7,16 @@
   "author": "bent0b0x",
   "license": "MIT",
   "scripts": {
-    "dev": "yarn webpack --watch --mode=development"
+    "dev": "yarn webpack --watch --mode=development",
+    "prettier": "yarn prettier --write",
+    "lint-staged": {
+      "*.{ts,tsx,js,json}": ["prettier --write", "tslint --fix", "git add"]
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "devDependencies": {
     "@types/lodash": "^4.14.118",
@@ -17,7 +26,10 @@
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "babel-preset-env": "^1.7.0",
     "jest": "^23.6.0",
+    "prettier": "^1.15.3",
     "ts-loader": "^5.3.1",
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.17.0",
     "typescript": "^3.2.1",
     "webpack": "^4.26.1",
     "webpack-cli": "^3.1.2"
