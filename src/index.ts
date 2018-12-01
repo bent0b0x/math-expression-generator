@@ -255,7 +255,7 @@ const generatePairExpression = (
   validOperators: IOperatorTruthTable
 ) => {
   const operators: ReadonlyArray<Operator> = [randomOperator(validOperators)];
-  const numbers: Readonlynumber[] = randomPairForNumberAndOperator(
+  const numbers: ReadonlyArray<number> = randomPairForNumberAndOperator(
     n,
     operators[0]
   );
