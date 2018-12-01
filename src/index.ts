@@ -1,7 +1,7 @@
 import * as isPrime from "quick-is-prime";
 import * as shuffle from "shuffle-array";
-import Operator from "./operators/types/Operator";
-import randomNumberInRange from "./random-numbers/randomNumberInRange";
+import randomNumberInRange from "./randomNumberInRange";
+import Operator from "./types/Operator";
 
 interface IOperatorTruthTable {
   [Operator.DIVISION]: boolean;

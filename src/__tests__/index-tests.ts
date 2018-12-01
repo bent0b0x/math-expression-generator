@@ -6,10 +6,10 @@ import * as Generatorics from "generatorics";
 import * as math from "mathjs";
 import * as isPrime from "quick-is-prime";
 import * as mathUtils from "../index";
-import operatorMapper from "../operators/operatorMapper";
-import randomNumberInRange from "../random-numbers/randomNumberInRange";
+import operatorMapper from "../operatorMapper";
+import randomNumberInRange from "../randomNumberInRange";
 
-import Operator from "../operators/types/Operator";
+import Operator from "../types/Operator";
 
 describe("findAllPositiveDivisors", () => {
   const numberCompare = (a: number, b: number) => a - b;

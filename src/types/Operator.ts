@@ -3,6 +3,6 @@ enum Operator {
   MULTIPLICATION = "×",
   ADDITION = "+",
   SUBTRACTION = "-"
-};
+}
 
 export default Operator;

@@ -1,4 +1,4 @@
-import Operator from "../operators/types/Operator";
+import Operator from "./types/Operator";
 
 export default (operator: Operator): string => {
   switch (operator) {
