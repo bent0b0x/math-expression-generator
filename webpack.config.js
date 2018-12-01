@@ -4,6 +4,10 @@ const path = require("path");
 module.exports = {
   devtool: "inline-source-map",
   entry: "./src/index.ts",
+  output: {
+    library: "math-expression-generator",
+    libraryTarget: "commonjs2"
+  },
   module: {
     rules: [
       {

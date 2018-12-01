@@ -1,3 +1,3 @@
-import generateExpression from "./generateExpression";
+import _generateExpression from "./generateExpression";
 
-export default generateExpression;
+export const generateExpression = _generateExpression;
