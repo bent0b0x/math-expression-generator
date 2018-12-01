@@ -1,4 +1,4 @@
 {
   "extends": ["tslint:latest", "tslint-config-prettier"],
-  "no-implicit-dependencies": [true, ["-**/__tests__/*"]]
+  "no-implicit-dependencies": true
 }

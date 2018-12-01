@@ -5,6 +5,8 @@
     "strictNullChecks": true,
     "module": "es6",
     "moduleResolution": "node",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
     "sourceMap": true,
     "target": "es6"
   }

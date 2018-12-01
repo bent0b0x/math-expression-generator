@@ -1,7 +1,7 @@
 import * as isPrime from "quick-is-prime";
 import * as shuffle from "shuffle-array";
-
 import Operator from "./operators/types/Operator";
+import randomNumberInRange from "./random-numbers/randomNumberInRange";
 
 interface IOperatorTruthTable {
   [Operator.DIVISION]: boolean;
@@ -9,25 +9,6 @@ interface IOperatorTruthTable {
   [Operator.ADDITION]: boolean;
   [Operator.SUBTRACTION]: boolean;
 }
-
-export const randomNumberInRange = (min: number, max: number): number =>
-  Math.floor(Math.random() * (max - min + 1)) + min;
-
-export const randomNumberInRangeExcept = (
-  min: number,
-  max: number,
-  except: number
-): number => {
-  let result: number | null = null;
-  let i = 0;
-
-  while ((result === null || result === except) && i < 10) {
-    result = randomNumberInRange(min, max);
-    i++;
-  }
-
-  return result || max;
-};
 
 export const findAllPositiveDivisors = (n: number): number[] => {
   const largeDivisors: number[] = [];

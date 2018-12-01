@@ -7,6 +7,7 @@ import * as math from "mathjs";
 import * as isPrime from "quick-is-prime";
 import * as mathUtils from "../index";
 import operatorMapper from "../operators/operatorMapper";
+import randomNumberInRange from "../random-numbers/randomNumberInRange";
 
 import Operator from "../operators/types/Operator";
 
@@ -253,11 +254,7 @@ describe("randomSubtractivePair", () => {
 describe("generateExpressionAndNoise", () => {
   it("should generate some valid expression of the specified length for any number between 0 to 1000", () => {
     for (let k = 2; k < 4; k++) {
-      for (
-        let i = 1;
-        i < 1001;
-        i += mathUtils.randomNumberInRange(0, 1) + 100
-      ) {
+      for (let i = 1; i < 1001; i += randomNumberInRange(0, 1) + 100) {
         for (let j = 0; j < 10; j++) {
           const expressionAndNoise: {
             numbers: number[];
@@ -296,11 +293,7 @@ describe("generateExpressionAndNoise", () => {
   });
   it("should generate some valid expression of the specified length for any number from -1000 to -1", () => {
     for (let k = 2; k < 4; k++) {
-      for (
-        let i = -1000;
-        i < 0;
-        i += mathUtils.randomNumberInRange(0, 1) + 100
-      ) {
+      for (let i = -1000; i < 0; i += randomNumberInRange(0, 1) + 100) {
         for (let j = 0; j < 10; j++) {
           const expressionAndNoise: {
             numbers: number[];
