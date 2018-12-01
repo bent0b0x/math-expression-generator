@@ -2,11 +2,12 @@
   "name": "math-expression-generator",
   "version": "0.0.0",
   "description": "JavaScript library for generating mathematical expressions that evaluate to a particular number",
-  "main": "index.js",
+  "main": "dist/main.js",
   "repository": "https://github.com/bent0b0x/math-expression-generator",
   "author": "bent0b0x",
   "license": "MIT",
   "scripts": {
+    "build": "yarn webpack --mode=production",
     "dev": "yarn webpack --watch --mode=development",
     "lint": "yarn tslint -p tsconfig.json",
     "test": "jest",

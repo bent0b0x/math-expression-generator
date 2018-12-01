@@ -1,3 +1,5 @@
+import Operator from "./Operator";
+
 interface IOperatorTruthTable {
   [Operator.DIVISION]: boolean;
   [Operator.MULTIPLICATION]: boolean;
