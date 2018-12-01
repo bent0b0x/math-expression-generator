@@ -1,13 +1,13 @@
-import shuffle from "lodash.shuffle";
+import shuffle from "shuffle-array";
 import isPrime from "quick-is-prime";
 
-import Operator from "./operators/types/Operator"
+import Operator from "./operators/types/Operator";
 
 interface OperatorTruthTable {
-  [Operator.DIVISION]: boolean,
-  [Operator.MULTIPLICATION]: boolean,
-  [Operator.ADDITION]: boolean,
-  [Operator.SUBTRACTION]: boolean
+  [Operator.DIVISION]: boolean;
+  [Operator.MULTIPLICATION]: boolean;
+  [Operator.ADDITION]: boolean;
+  [Operator.SUBTRACTION]: boolean;
 }
 
 export const randomNumberInRange = (min: number, max: number): number =>
@@ -157,11 +157,13 @@ export const randomOperator = (
 ): Operator => {
   let operators: Array<Operator> = [];
   if (validOperators) {
-    Object.keys(validOperators).forEach((operator: Operator): void => {
-      if (validOperators[operator]) {
-        operators.push(operator);
+    Object.keys(validOperators).forEach(
+      (operator: Operator): void => {
+        if (validOperators[operator]) {
+          operators.push(operator);
+        }
       }
-    })
+    );
   } else {
     operators = [
       Operator.ADDITION,
@@ -185,10 +187,10 @@ const randomPairForNumberAndOperator = (
   return operator === Operator.ADDITION
     ? randomAdditivePair(n)
     : operator === Operator.SUBTRACTION
-        ? randomSubtractivePair(n)
-        : operator === Operator.MULTIPLICATION
-            ? randomDivisorPair(n)
-            : randomMultiplePair(n);
+    ? randomSubtractivePair(n)
+    : operator === Operator.MULTIPLICATION
+    ? randomDivisorPair(n)
+    : randomMultiplePair(n);
 };
 
 const generateNoiseNumbers = (n: number, numPairs: number): Array<number> => {
@@ -239,17 +241,21 @@ const getValidOperators = (
   leftOperator?: Operator,
   rightOperator?: Operator
 ): OperatorTruthTable => ({
-  [Operator.DIVISION]: n !== 1 &&
+  [Operator.DIVISION]:
+    n !== 1 &&
     n !== -1 &&
     ((!leftOperator && !rightOperator) ||
-      (leftOperator !== Operator.DIVISION &&
-        (onLeft && !rightOperator)) ||
+      (leftOperator !== Operator.DIVISION && (onLeft && !rightOperator)) ||
       (!leftOperator && !rightOperator)),
-  [Operator.MULTIPLICATION]: n !== 1 &&
+  [Operator.MULTIPLICATION]:
+    n !== 1 &&
     n !== -1 &&
     (leftOperator !== Operator.DIVISION &&
-      (!!leftOperator || !!rightOperator || (!isPrime(n) && n !== 1 && n !== -1))),
-  [Operator.ADDITION]: n !== 1 &&
+      (!!leftOperator ||
+        !!rightOperator ||
+        (!isPrime(n) && n !== 1 && n !== -1))),
+  [Operator.ADDITION]:
+    n !== 1 &&
     n !== -1 &&
     ((!leftOperator && !rightOperator) ||
       (leftOperator !== Operator.DIVISION &&
@@ -257,7 +263,8 @@ const getValidOperators = (
         leftOperator !== Operator.MULTIPLICATION &&
         rightOperator !== Operator.DIVISION &&
         rightOperator !== Operator.MULTIPLICATION)),
-  [Operator.SUBTRACTION]: (!leftOperator && !rightOperator) ||
+  [Operator.SUBTRACTION]:
+    (!leftOperator && !rightOperator) ||
     (leftOperator !== Operator.DIVISION &&
       leftOperator !== Operator.MULTIPLICATION &&
       rightOperator !== Operator.DIVISION &&
@@ -286,11 +293,11 @@ const generateExpression = (
   };
 
   if (length > 2) {
-    const zeroOrOne: number = pairExpression.operators[0] ===
-      Operator.DIVISION ||
+    const zeroOrOne: number =
+      pairExpression.operators[0] === Operator.DIVISION ||
       rightOperator === Operator.DIVISION
-      ? 0
-      : randomNumberInRange(0, 1);
+        ? 0
+        : randomNumberInRange(0, 1);
     const left: boolean = zeroOrOne === 0;
 
     const additionalExpression = generateExpression(

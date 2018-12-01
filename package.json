@@ -6,12 +6,26 @@
   "repository": "https://github.com/bent0b0x/math-expression-generator",
   "author": "bent0b0x",
   "license": "MIT",
+  "scripts": {
+    "dev": "yarn webpack --watch --mode=development"
+  },
   "devDependencies": {
+    "@types/lodash": "^4.14.118",
+    "@webpack-cli/init": "^0.1.2",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.4",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-preset-env": "^1.7.0",
     "jest": "^23.6.0",
-    "typescript": "^3.2.1"
+    "ts-loader": "^5.3.1",
+    "typescript": "^3.2.1",
+    "webpack": "^4.26.1",
+    "webpack-cli": "^3.1.2"
   },
   "dependencies": {
+    "@types/shuffle-array": "^0.0.28",
     "lodash.shuffle": "^4.2.0",
-    "quick-is-prime": "^1.0.7"
+    "quick-is-prime": "^1.0.7",
+    "shuffle-array": "^1.0.1"
   }
 }
