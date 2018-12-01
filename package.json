@@ -8,6 +8,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "yarn webpack --watch --mode=development",
+    "lint": "yarn tslint -p tsconfig.json",
     "test": "jest",
     "test:dev": "jest --watchAll"
   },
