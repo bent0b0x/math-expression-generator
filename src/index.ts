@@ -1,7 +1,7 @@
 import * as isPrime from "quick-is-prime";
 import * as shuffle from "shuffle-array";
 
-import findAllPositiveDivisors from "./findAllPositiveDivisors";
+import randomDivisorPair from "./randomDivisorPair";
 import randomNumberInRange from "./randomNumberInRange";
 
 import Operator from "./types/Operator";
@@ -12,40 +12,6 @@ interface IOperatorTruthTable {
   [Operator.ADDITION]: boolean;
   [Operator.SUBTRACTION]: boolean;
 }
-
-export const randomDivisorPair = (n: number): [number, number] => {
-  if (n === 0) {
-    return [0, 0];
-  }
-
-  if (n > 0) {
-    const divisorsForPositiveN: number[] = findAllPositiveDivisors(n);
-
-    if (!divisorsForPositiveN.length) {
-      return [0, 0];
-    }
-
-    const randomDivisorForPositiveN: number =
-      divisorsForPositiveN[
-        Math.floor(Math.random() * divisorsForPositiveN.length)
-      ];
-
-    return [randomDivisorForPositiveN, n / randomDivisorForPositiveN];
-  }
-
-  const divisorsForNonPositiveN: number[] = findAllPositiveDivisors(-n);
-
-  if (!divisorsForNonPositiveN.length) {
-    return [0, 0];
-  }
-
-  const randomDivisorForNonPositiveN: number =
-    divisorsForNonPositiveN[
-      Math.floor(Math.random() * divisorsForNonPositiveN.length)
-    ] * (randomNumberInRange(1, 2) === 1 ? 1 : -1);
-
-  return [randomDivisorForNonPositiveN, n / randomDivisorForNonPositiveN];
-};
 
 export const randomMultiplePair = (n: number): [number, number] => {
   if (n === 0) {
