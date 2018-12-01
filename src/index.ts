@@ -5,6 +5,7 @@ import randomAdditivePair from "./randomAdditivePair";
 import randomDivisorPair from "./randomDivisorPair";
 import randomMultiplePair from "./randomMultiplePair";
 import randomNumberInRange from "./randomNumberInRange";
+import randomSubtractivePair from "./randomSubtractivePair";
 
 import Operator from "./types/Operator";
 
@@ -14,54 +15,6 @@ interface IOperatorTruthTable {
   [Operator.ADDITION]: boolean;
   [Operator.SUBTRACTION]: boolean;
 }
-
-export const randomSubtractivePair = (n: number): [number, number] => {
-  if (n === 0) {
-    return [0, 0];
-  }
-
-  if (n > 0) {
-    const randomSubtractiveNumberForPositiveN: number = randomNumberInRange(
-      1,
-      Math.floor(Math.sqrt(n))
-    );
-
-    const secondSubtractiveNumberForPositiveN: number =
-      randomSubtractiveNumberForPositiveN + n;
-
-    return randomSubtractiveNumberForPositiveN -
-      secondSubtractiveNumberForPositiveN ===
-      n
-      ? [
-          randomSubtractiveNumberForPositiveN,
-          secondSubtractiveNumberForPositiveN
-        ]
-      : [
-          secondSubtractiveNumberForPositiveN,
-          randomSubtractiveNumberForPositiveN
-        ];
-  }
-
-  const randomSubtractiveNumberForNonPositiveN: number = randomNumberInRange(
-    n,
-    -n
-  );
-
-  const secondSubtractiveNumberForNonPositiveN: number =
-    randomSubtractiveNumberForNonPositiveN + n;
-
-  return randomSubtractiveNumberForNonPositiveN -
-    secondSubtractiveNumberForNonPositiveN ===
-    n
-    ? [
-        randomSubtractiveNumberForNonPositiveN,
-        secondSubtractiveNumberForNonPositiveN
-      ]
-    : [
-        secondSubtractiveNumberForNonPositiveN,
-        randomSubtractiveNumberForNonPositiveN
-      ];
-};
 
 export const randomOperator = (
   validOperators?: IOperatorTruthTable
