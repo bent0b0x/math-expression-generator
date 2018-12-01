@@ -1,6 +1,6 @@
 enum Operator {
-  DIVISION = "÷",
-  MULTIPLICATION = "×",
+  DIVISION = "/",
+  MULTIPLICATION = "*",
   ADDITION = "+",
   SUBTRACTION = "-"
 }
