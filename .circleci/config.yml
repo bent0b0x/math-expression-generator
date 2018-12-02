@@ -60,7 +60,6 @@ workflows:
           filters:
             branches:
               ignore: /.*/
-          filters:
             tags:
               only: /^v\d+(\.\d+){2}/
           requires:
