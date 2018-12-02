@@ -2,6 +2,16 @@
   "name": "math-expression-generator",
   "version": "1.0.3",
   "description": "JavaScript library for generating mathematical expressions that evaluate to a particular number",
+  "keywords": [
+    "math",
+    "arithmetic",
+    "mathematical",
+    "expression",
+    "addition",
+    "subtraction",
+    "multiplication",
+    "division"
+  ],
   "main": "dist/index.js",
   "repository": "https://github.com/bent0b0x/math-expression-generator",
   "author": "bent0b0x",
