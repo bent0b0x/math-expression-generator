@@ -39,7 +39,6 @@ jobs:
 
       - run: yarn install --pure-lockfile
 
-    steps:
       - run: yarn publish
 
 workflows:
