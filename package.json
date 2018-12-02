@@ -9,6 +9,7 @@
   "scripts": {
     "build": "yarn webpack --mode=production",
     "dev": "yarn webpack --watch --mode=development",
+    "generate-docs": "typedoc --tsconfig tsconfig.json --out docs/ src/generateExpression.ts src/types --excludeExternals",
     "lint": "yarn tslint -p tsconfig.json",
     "test": "jest",
     "test:dev": "jest --watchAll"
@@ -21,6 +22,7 @@
   "lint-staged": {
     "*.{ts,tsx}": [
       "tslint --fix",
+      "yarn generate-docs",
       "git add"
     ],
     "*.{ts,tsx,js,json}": [
@@ -49,6 +51,7 @@
     "ts-loader": "^5.3.1",
     "tslint": "^5.11.0",
     "tslint-config-prettier": "^1.17.0",
+    "typedoc": "^0.13.0",
     "typescript": "^3.2.1",
     "webpack": "^4.26.1",
     "webpack-cli": "^3.1.2"

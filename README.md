@@ -41,3 +41,23 @@ const result = math.eval(expression);
 
 console.log(result); // 20
 ```
+
+### Documentation
+
+Generated with [typedoc](https://github.com/TypeStrong/typedoc) ❤️
+
+[Click to view docs](./docs/index.html)
+
+### TypeScript Types
+
+If you are using TypeScript in your own project, you can import some types from this library.
+
+**Expression:**
+`import Expression from 'math-expression-generator/types/Expression';`
+
+[Expression docs](./docs/modules/_types_expression_.html)
+
+**Operator:**
+`import Operator from 'math-expression-generator/types/Operator';`
+
+[Expression docs](./docs/modules/_types_operator_.html)
