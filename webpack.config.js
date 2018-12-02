@@ -1,9 +1,12 @@
 const webpack = require("webpack");
 const path = require("path");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   devtool: "inline-source-map",
-  entry: "./src/index.ts",
+  entry: {
+    index: "./src/index.ts"
+  },
   output: {
     library: "math-expression-generator",
     libraryTarget: "commonjs2"
@@ -57,5 +60,11 @@ module.exports = {
       minSize: 30000,
       name: false
     }
-  }
+  },
+
+  plugins: [
+    new CopyWebpackPlugin([
+      { from: "./src/types/**/*.ts", to: "./types", flatten: true }
+    ])
+  ]
 };
