@@ -57,7 +57,8 @@ workflows:
             tags:
               only: /v[0-9]+(\.[0-9]+)*/
       - publish:
-          branches:
+          filters:
+            branches:
               ignore: /.*/
           filters:
             tags:
