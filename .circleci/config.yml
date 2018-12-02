@@ -25,11 +25,15 @@ jobs:
 
       - run: yarn test
 
-  - publish:
-      filters:
-        tags:
-          only: /^v\d+(\.\d+){2}/
-        branches:
-          only: master
-      requires:
-        - build
+workflows:
+  version: 2
+  math-expression-generator:
+    jobs:
+      - publish:
+          filters:
+            tags:
+              only: /^v\d+(\.\d+){2}/
+            branches:
+              only: master
+          requires:
+            - build
