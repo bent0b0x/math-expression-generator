@@ -25,6 +25,10 @@ jobs:
 
       - run: yarn test
 
+  publish:
+    steps:
+      - run: yarn publish
+
 workflows:
   version: 2
   math-expression-generator:
