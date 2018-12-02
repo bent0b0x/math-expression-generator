@@ -68,8 +68,6 @@
     "webpack-cli": "^3.1.2"
   },
   "dependencies": {
-    "lodash.shuffle": "^4.2.0",
-    "quick-is-prime": "^1.0.7",
-    "shuffle-array": "^1.0.1"
+    "quick-is-prime": "^1.0.7"
   }
 }
