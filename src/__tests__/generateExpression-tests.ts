@@ -11,7 +11,10 @@ describe("generateExpression", () => {
     for (let k = 2; k < 4; k++) {
       for (let i = 1; i < 1001; i += 1) {
         for (let j = 0; j < 10; j++) {
-          const expression: Expression = generateExpression(i, k);
+          const expression: Expression = generateExpression({
+            length: k,
+            target: i
+          });
 
           expect(expression.length).toEqual(k + (k - 1));
 
@@ -32,7 +35,10 @@ describe("generateExpression", () => {
     for (let k = 2; k < 4; k++) {
       for (let i = -1000; i < -999; i += 1) {
         for (let j = 0; j < 10; j++) {
-          const expression: Expression = generateExpression(i, k);
+          const expression: Expression = generateExpression({
+            length: k,
+            target: i
+          });
 
           expect(expression.length).toEqual(k + (k - 1));
 
@@ -53,7 +59,10 @@ describe("generateExpression", () => {
     const primes: number[] = [1, 2, 13, 17, 19, 103, 199, 131];
     primes.forEach((prime: number) => {
       for (let i = 0; i < 5; i++) {
-        const expression: Expression = generateExpression(prime, 2);
+        const expression: Expression = generateExpression({
+          length: 2,
+          target: prime
+        });
         expect(expression.length).toEqual(3);
         expect(expression[1]).not.toEqual(Operator.MULTIPLICATION);
       }
