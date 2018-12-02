@@ -24,3 +24,12 @@ jobs:
       - run: yarn lint
 
       - run: yarn test
+
+  - publish:
+      filters:
+        tags:
+          only: /^v\d+(\.\d+){2}/
+        branches:
+          only: master
+      requires:
+        - build
