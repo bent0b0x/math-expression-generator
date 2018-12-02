@@ -29,6 +29,10 @@ workflows:
   version: 2
   math-expression-generator:
     jobs:
+      - build:
+          filters:
+            tags:
+              only: /^v\d+(\.\d+){2}/
       - publish:
           filters:
             tags:
