@@ -46,7 +46,7 @@ console.log(result); // 20
 
 Generated with [typedoc](https://github.com/TypeStrong/typedoc) ❤️
 
-[Click to view docs](./docs/index.html)
+[Click to view docs](https://bent0b0x.github.io/math-expression-generator/)
 
 ### TypeScript Types
 
