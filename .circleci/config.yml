@@ -39,7 +39,7 @@ jobs:
 
       - run: yarn install --pure-lockfile
 
-      - run: yarn publish
+      - run: npm publish
 
 workflows:
   version: 2
