@@ -54,6 +54,6 @@ workflows:
             tags:
               only: /^v\d+(\.\d+){2}/
             branches:
-              only: master
+              ignore: /.*/
           requires:
             - build
