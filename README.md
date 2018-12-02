@@ -7,18 +7,18 @@ Computes random arithmetic expressions (of configurable length) that evalute to 
 ## Usage
 
 ```javascript
-import { generateExpression } from 'math-expression-generator';
+import { generateExpression } from "math-expression-generator";
 
 const expression = generateExpression({
-  target: 20,
-  length: 2
+    target: 20,
+    length: 2
 });
 
 console.log(expression); // [15, '+', 5]
 
 const longExpression = generateExpression({
-  target: 4828,
-  length: 5
+    target: 4828,
+    length: 5
 });
 
 console.log(longExpression); // [ 2, '*', 13, '*', 10, '*', 1207, '/', 65 ]
@@ -29,12 +29,12 @@ console.log(longExpression); // [ 2, '*', 13, '*', 10, '*', 1207, '/', 65 ]
 If you want to evaluate the returned expression (to verify it is correct, for example), you can use [mathjs](http://mathjs.org/) (but there are plenty of other library solutions out there):
 
 ```javascript
-import { generateExpression } from 'math-expression-generator';
-import math from 'mathjs';
+import { generateExpression } from "math-expression-generator";
+import math from "mathjs";
 
 const expression = generateExpression({
-  target: 20,
-  length: 2
+    target: 20,
+    length: 2
 });
 
 const result = math.eval(expression);
@@ -55,9 +55,9 @@ If you are using TypeScript in your own project, you can import some types from 
 **Expression:**
 `import Expression from 'math-expression-generator/types/Expression';`
 
-[Expression docs](./docs/modules/_types_expression_.html)
+[Expression docs](https://bent0b0x.github.io/math-expression-generator/modules/_types_expression_.html)
 
 **Operator:**
 `import Operator from 'math-expression-generator/types/Operator';`
 
-[Expression docs](./docs/modules/_types_operator_.html)
+[Operator docs](https://bent0b0x.github.io/math-expression-generator/modules/_types_operator_.html)
