@@ -52,13 +52,15 @@ workflows:
     jobs:
       - build:
           filters:
+            branches:
+              ignore: /.*/
             tags:
               only: /v[0-9]+(\.[0-9]+)*/
       - publish:
+          branches:
+              ignore: /.*/
           filters:
             tags:
               only: /^v\d+(\.\d+){2}/
-            branches:
-              ignore: /.*/
           requires:
             - build
