@@ -2,7 +2,7 @@
 
 [![CircleCI](https://circleci.com/gh/bent0b0x/math-expression-generator.svg?style=svg)](https://circleci.com/gh/bent0b0x/math-expression-generator)
 
-Computes random arithmetic expressions (of configurable length) that evalute to a given number.
+JavaScript library to compute random arithmetic expressions (of configurable length) that evalute to a given number.
 
 ## Usage
 
