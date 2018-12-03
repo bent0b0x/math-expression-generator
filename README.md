@@ -37,7 +37,7 @@ const expression = generateExpression({
     length: 2
 });
 
-const result = math.eval(expression);
+const result = math.eval(expression.join(" "));
 
 console.log(result); // 20
 ```
