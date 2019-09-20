@@ -126,6 +126,21 @@ typedoc.search.data = {
       url: "modules/_generateexpression_.html#generateexpression",
       classes: "tsd-kind-function tsd-parent-kind-external-module",
       parent: '"generateExpression"'
+    },
+    {
+      id: 15,
+      kind: 1,
+      name: '"generateBag"',
+      url: "modules/_generatebag_.html",
+      classes: "tsd-kind-external-module"
+    },
+    {
+      id: 16,
+      kind: 64,
+      name: "generateBag",
+      url: "modules/_generatebag_.html#generatebag",
+      classes: "tsd-kind-function tsd-parent-kind-external-module",
+      parent: '"generateBag"'
     }
   ]
 };

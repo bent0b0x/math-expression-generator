@@ -1,4 +1,4 @@
 {
   "extends": ["tslint:latest", "tslint-config-prettier"],
-  "no-implicit-dependencies": true
+  "rules": { "no-implicit-dependencies": true }
 }
