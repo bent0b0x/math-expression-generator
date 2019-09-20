@@ -26,7 +26,7 @@ describe("generateExpression", () => {
             }
           }
 
-          expect(math.eval(expression.join(""))).toEqual(i);
+          expect(math.evaluate(expression.join(""))).toEqual(i);
         }
       }
     }
@@ -50,7 +50,7 @@ describe("generateExpression", () => {
             }
           }
 
-          expect(math.eval(expression.join(""))).toEqual(i);
+          expect(math.evaluate(expression.join(""))).toEqual(i);
         }
       }
     }
