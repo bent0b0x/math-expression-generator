@@ -130,18 +130,17 @@ typedoc.search.data = {
     {
       id: 15,
       kind: 1,
-      name: '"__tests__/generateBag-tests"',
-      url: "modules/___tests___generatebag_tests_.html",
+      name: '"generateBag"',
+      url: "modules/_generatebag_.html",
       classes: "tsd-kind-external-module"
     },
     {
       id: 16,
       kind: 64,
-      name: "bagCanEvaluateToValue",
-      url: "modules/___tests___generatebag_tests_.html#bagcanevaluatetovalue",
-      classes:
-        "tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported",
-      parent: '"__tests__/generateBag-tests"'
+      name: "generateBag",
+      url: "modules/_generatebag_.html#generatebag",
+      classes: "tsd-kind-function tsd-parent-kind-external-module",
+      parent: '"generateBag"'
     }
   ]
 };

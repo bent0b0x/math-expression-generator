@@ -19,7 +19,7 @@
   "scripts": {
     "build": "yarn webpack --mode=production",
     "dev": "yarn webpack --watch --mode=development",
-    "generate-docs": "typedoc --tsconfig ./src/tsconfig.json --out docs/ src/generateExpression.ts src/generateBag.ts src/types --excludeExternals",
+    "generate-docs": "typedoc --tsconfig tsconfig.json --out docs/ src/generateExpression.ts src/generateBag.ts src/types --excludeExternals",
     "lint": "yarn tslint -p tsconfig.json",
     "prepublishOnly": "yarn build",
     "test": "jest",
