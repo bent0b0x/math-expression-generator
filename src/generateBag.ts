@@ -5,7 +5,7 @@ import randomOperator from "./randomOperator";
 import randomPairForNumberAndOperator from "./randomPairForNumberAndOperator";
 import Expression from "./types/Expression";
 
-const generateBag = (target: number, length: number) => {
+const generateBag = (target: number, length: number): Expression => {
   let expression: Expression = [target];
 
   while (expression.length < length * 2 - 1) {
