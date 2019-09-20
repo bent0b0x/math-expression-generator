@@ -27,7 +27,10 @@ const bagCanEvaluateToValue = (bag, value) => {
       return false;
     }
 
-    copiedBag = [math.eval(`${firstItem} ${secondItem} ${thirdItem}`), ...rest];
+    copiedBag = [
+      math.evaluate(`${firstItem} ${secondItem} ${thirdItem}`),
+      ...rest
+    ];
 
     return bagCanEvaluateToValue(copiedBag, value);
   });

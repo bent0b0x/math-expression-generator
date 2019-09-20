@@ -64,36 +64,47 @@
 			<div class="tsd-panel tsd-typography">
 				<h1 id="math-expression-generator">Math Expression Generator</h1>
 				<p><a href="https://circleci.com/gh/bent0b0x/math-expression-generator"><img src="https://circleci.com/gh/bent0b0x/math-expression-generator.svg?style=svg" alt="CircleCI"></a></p>
-				<p>Computes random arithmetic expressions (of configurable length) that evalute to a given number.</p>
+				<p>JavaScript library to compute random arithmetic expressions (of configurable length) that evalute to a given number.</p>
 				<h2 id="usage">Usage</h2>
-				<pre><code class="language-javascript"><span class="hljs-keyword">import</span> { generateExpression } <span class="hljs-keyword">from</span> <span class="hljs-string">'math-expression-generator'</span>;
+				<pre><code class="language-javascript"><span class="hljs-keyword">import</span> { generateExpression } <span class="hljs-keyword">from</span> <span class="hljs-string">"math-expression-generator"</span>;
 
 <span class="hljs-keyword">const</span> expression = generateExpression({
-  <span class="hljs-attr">target</span>: <span class="hljs-number">20</span>,
-  <span class="hljs-attr">length</span>: <span class="hljs-number">2</span>
+    <span class="hljs-attr">target</span>: <span class="hljs-number">20</span>,
+    <span class="hljs-attr">length</span>: <span class="hljs-number">2</span>
 });
 
 <span class="hljs-built_in">console</span>.log(expression); <span class="hljs-comment">// [15, '+', 5]</span>
 
 <span class="hljs-keyword">const</span> longExpression = generateExpression({
-  <span class="hljs-attr">target</span>: <span class="hljs-number">4828</span>,
-  <span class="hljs-attr">length</span>: <span class="hljs-number">5</span>
+    <span class="hljs-attr">target</span>: <span class="hljs-number">4828</span>,
+    <span class="hljs-attr">length</span>: <span class="hljs-number">5</span>
 });
 
 <span class="hljs-built_in">console</span>.log(longExpression); <span class="hljs-comment">// [ 2, '*', 13, '*', 10, '*', 1207, '/', 65 ]</span></code></pre>
 				<h3 id="evaluate-the-expression">Evaluate the expression</h3>
 				<p>If you want to evaluate the returned expression (to verify it is correct, for example), you can use <a href="http://mathjs.org/">mathjs</a> (but there are plenty of other library solutions out there):</p>
-				<pre><code class="language-javascript"><span class="hljs-keyword">import</span> { generateExpression } <span class="hljs-keyword">from</span> <span class="hljs-string">'math-expression-generator'</span>;
-<span class="hljs-keyword">import</span> math <span class="hljs-keyword">from</span> <span class="hljs-string">'mathjs'</span>;
+				<pre><code class="language-javascript"><span class="hljs-keyword">import</span> { generateExpression } <span class="hljs-keyword">from</span> <span class="hljs-string">"math-expression-generator"</span>;
+<span class="hljs-keyword">import</span> math <span class="hljs-keyword">from</span> <span class="hljs-string">"mathjs"</span>;
 
 <span class="hljs-keyword">const</span> expression = generateExpression({
-  <span class="hljs-attr">target</span>: <span class="hljs-number">20</span>,
-  <span class="hljs-attr">length</span>: <span class="hljs-number">2</span>
+    <span class="hljs-attr">target</span>: <span class="hljs-number">20</span>,
+    <span class="hljs-attr">length</span>: <span class="hljs-number">2</span>
 });
 
-<span class="hljs-keyword">const</span> result = math.eval(expression);
+<span class="hljs-keyword">const</span> result = math.eval(expression.join(<span class="hljs-string">" "</span>));
 
 <span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">// 20</span></code></pre>
+				<h3 id="documentation">Documentation</h3>
+				<p>Generated with <a href="https://github.com/TypeStrong/typedoc">typedoc</a> ❤️</p>
+				<p><a href="https://bent0b0x.github.io/math-expression-generator/">Click to view docs</a></p>
+				<h3 id="typescript-types">TypeScript Types</h3>
+				<p>If you are using TypeScript in your own project, you can import some types from this library.</p>
+				<p><strong>Expression:</strong>
+				<code>import Expression from &#39;math-expression-generator/types/Expression&#39;;</code></p>
+				<p><a href="https://bent0b0x.github.io/math-expression-generator/modules/_types_expression_.html">Expression docs</a></p>
+				<p><strong>Operator:</strong>
+				<code>import Operator from &#39;math-expression-generator/types/Operator&#39;;</code></p>
+				<p><a href="https://bent0b0x.github.io/math-expression-generator/modules/_types_operator_.html">Operator docs</a></p>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">

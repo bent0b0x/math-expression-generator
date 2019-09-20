@@ -88,9 +88,10 @@
   version "0.4.2"
   resolved "https://registry.yarnpkg.com/@types/marked/-/marked-0.4.2.tgz#64a89e53ea37f61cc0f3ee1732c555c2dbf6452f"
 
-"@types/mathjs@^4.4.3":
-  version "4.4.3"
-  resolved "https://registry.yarnpkg.com/@types/mathjs/-/mathjs-4.4.3.tgz#26de56cf36c4dc4ae40ab2e84e39a88e64e6d1dc"
+"@types/mathjs@^6.0.2":
+  version "6.0.2"
+  resolved "https://registry.yarnpkg.com/@types/mathjs/-/mathjs-6.0.2.tgz#fb77aff0adcd75cf9df358ae8891e239c7ca4203"
+  integrity sha512-VXRnT6ozA8k5i3xyv8WpwarNCsIwV6Z5Cuz5bPuj9pqr5jOo3rZk/tRWdHBCmC0KMchH8OBYPC72p4ftyMXK1Q==
   dependencies:
     decimal.js "^10.0.0"
 
