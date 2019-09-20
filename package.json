@@ -1,6 +1,6 @@
 {
   "name": "math-expression-generator",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "JavaScript library for generating mathematical expressions that evaluate to a particular number",
   "keywords": [
     "math",
