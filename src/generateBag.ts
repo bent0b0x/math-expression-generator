@@ -1,6 +1,6 @@
 import * as shuffle from "lodash.shuffle";
 import getValidOperators from "./getValidOperators";
-import randomNumberInRange from "./randomNumberInRange";
+import randomGaussianNumberInRange from "./randomGaussianNumberInRange";
 import randomOperator from "./randomOperator";
 import randomPairForNumberAndOperator from "./randomPairForNumberAndOperator";
 import Expression from "./types/Expression";
@@ -9,7 +9,7 @@ const generateBag = (target: number, length: number): Expression => {
   let expression: Expression = [target];
 
   while (expression.length < length * 2 - 1) {
-    const numberIndexToSplit = randomNumberInRange(
+    const numberIndexToSplit = randomGaussianNumberInRange(
       0,
       (expression.length + 1) / 2 - 1
     );
